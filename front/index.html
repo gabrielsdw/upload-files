@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Imagem</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md" >
+        <h1 class="text-2xl font-semibold text-gray-700 text-center mb-6">Envie seu Nome e uma Imagem</h1>
+
+        <form id="uploadForm" enctype="multipart/form-data" class="space-y-4" method="POST" action="http://127.0.0.1:8000/register">
+            <div>
+                <label for="username" class="block font-medium">Nome de Usuário:</label>
+                <input type="text" id="username" name="username" required
+                    class="w-full border p-2 mt-1 rounded-md ">
+            </div>
+
+            <div>
+                <label for="foto" class="block font-medium">Escolha uma Imagem:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required
+                    class="w-full border p-2 mt-1 rounded-md ">
+            </div>
+
+            <button type="submit"
+                class="w-full bg-green-500 text-white font-semibold p-2 rounded-md hover:bg-green-700">
+                Enviar
+            </button>
+        </form>
+
+        <h2 class="text-xl font-semibold text-gray-700 text-center my-6">Resposta do Servidor:</h2>
+        <pre id="response" class=""></pre>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
